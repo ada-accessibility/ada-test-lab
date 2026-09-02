@@ -12,7 +12,7 @@ export default function Gallery() {
         {ITEMS.map((item) => (
           <div className="gallery-card" key={item.name}>
             {/* Tier 1 violation: image with no alt text (axe: image-alt) */}
-            <img src={item.image} />
+            <img src={item.image} alt="Widget A" />
             <p className="gallery-name">{item.name}</p>
             {/* Tier 1 violation: icon-only link, no accessible name (axe: link-name) */}
             <a href="#" className="gallery-link">
