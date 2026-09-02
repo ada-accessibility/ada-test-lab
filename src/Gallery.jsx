@@ -15,7 +15,7 @@ export default function Gallery() {
             <img src={item.image} alt="Widget A" />
             <p className="gallery-name">{item.name}</p>
             {/* Tier 1 violation: icon-only link, no accessible name (axe: link-name) */}
-            <a href="#" className="gallery-link">
+            <a href="#" className="gallery-link" aria-label="Learn more">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M9 18l6-6-6-6" />
               </svg>
