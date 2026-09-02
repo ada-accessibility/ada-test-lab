@@ -11,11 +11,10 @@ Tier 1 = deterministic fallback, auto-merges free. Tier 2 = Gemini drafts a patc
 for review. Tier 3 = `locate_source()` can't safely pin the violation to one place in the repo,
 so no patch is even attempted.
 
-Rule ids and tiers below are provisional pending a real scan against the deployed site — some of
-these axe rules turned out unreliable (deprecated, WCAG-2.1-only, or "incomplete"-only) when
-building `ada-test-site`, so treat this table as a draft until verified.
+Verified against a real headless-browser axe scan of the deployed site (20 rule ids checked, 20
+confirmed as real violations — nothing missing, nothing extra).
 
-| File | Violation (axe rule) | Tier (draft) |
+| File | Violation (axe rule) | Tier |
 |---|---|---|
 | `index.html` | `<html>` has no `lang` attribute (`html-has-lang`) | 1 |
 | `index.html` | No `<title>` (`document-title`) | 3 |
@@ -32,11 +31,14 @@ building `ada-test-site`, so treat this table as a draft until verified.
 | `src/PreferencesPanel.jsx` | Custom radio missing `aria-checked` (`aria-required-attr`) | 2 |
 | `src/PreferencesPanel.jsx` | `aria-checked` not allowed on a paragraph's role (`aria-allowed-attr`) | 2 |
 | `src/PreferencesPanel.jsx` | Positive `tabindex` (`tabindex`) | 2 |
-| `src/MediaPanel.jsx` | Video with no caption track (`video-caption`) | 2 |
 | `src/MediaPanel.jsx` | Iframe with no title (`frame-title`) | 2 |
 | `src/DataTable.jsx` | Empty table header cell (`empty-table-header`) | 2 |
 | `src/MiscWidgets.jsx` | Focusable element inside `aria-hidden` (`aria-hidden-focus`) | 2 |
 | `src/MiscWidgets.jsx` | `<li>` outside a `<ul>`/`<ol>` (`listitem`) | 2 |
+
+Note: no `video-caption` example — like `duplicate-id-aria` in `ada-test-site`, that rule only ever
+reports as "incomplete" (needs manual review) in this axe-core version, never a hard violation, so
+it's not a fair automatic test case.
 
 ## Local dev
 
