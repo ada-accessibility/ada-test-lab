@@ -9,7 +9,7 @@ export default function PreferencesPanel() {
       </div>
 
       {/* Tier 2 violation: aria-checked isn't a supported attribute on a paragraph's implicit role (axe: aria-allowed-attr) */}
-      <p aria-checked="true" className="status-text">
+      <p className="status-text">
         Sync status: up to date
       </p>
 
