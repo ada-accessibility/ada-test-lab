@@ -5,7 +5,7 @@ export default function MiscWidgets() {
 
       {/* Tier 2 violation: focusable element hidden from assistive tech but not from keyboard (axe: aria-hidden-focus) */}
       <div aria-hidden="true" className="hidden-banner">
-        <button className="hidden-btn">Dismiss</button>
+        <button className="hidden-btn" tabIndex={-1}>Dismiss</button>
       </div>
 
       {/* Tier 2 violation: <li> not contained by a <ul>/<ol>/[role=list] (axe: listitem) */}
