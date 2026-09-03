@@ -4,7 +4,7 @@ export default function PreferencesPanel() {
       <h2>Preferences</h2>
 
       {/* Tier 2 violation: custom radio missing required aria-checked (axe: aria-required-attr) */}
-      <div role="radio" className="theme-option" tabIndex={0}>
+      <div role="radio" aria-checked="false" className="theme-option" tabIndex={0}>
         Dark theme
       </div>
 
