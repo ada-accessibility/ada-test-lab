@@ -12,7 +12,7 @@ export default function SignupForm() {
         <option value="qa">QA</option>
       </select>
       {/* Tier 2 violation: invalid ARIA attribute value — aria-invalid must be true/false/grammar/spelling, not "yes" (axe: aria-valid-attr-value) */}
-      <input type="password" className="password-input" aria-invalid="yes" />
+      <input type="password" className="password-input" aria-invalid="true" />
       <button type="submit">Sign up</button>
       {/* Tier 1 violation: low-contrast text, light gray on white (axe: color-contrast) */}
       <p className="fine-print">
